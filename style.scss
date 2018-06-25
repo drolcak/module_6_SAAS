@@ -5,6 +5,12 @@
 }
 
 $background-transparency: rgba(0, 0, 0, .5);
+$color-facebook: #3B5998;
+$color-twitter: #4099FF;
+$color-googleplus: #DB5A3C;
+$color-instagram: #5C3D2E;
+$color-github: #4183C4;
+$width: 8.33%; /*nie wpadłem na nic mądrzejszego, zeby sobie operatory poćwiczyć:D*/
 
 * {
   box-sizing: border-box;
@@ -309,405 +315,419 @@ p {font-size: 18px;}
 
       /* -------------------------NUMBERS -------------------------*/
 
-    .numbers .container .row .col-m-3, .numbers .container .row .col-s-12 {
-      text-transform: uppercase;
-      text-align: center;
-      padding: 10% 0;
+.numbers {
+  p {
+    color: #01C9EB;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h2 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 60px;
+  }
+  .container {
+    .row {
+      .col-m-3,
+      .col-s-12 {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10% 0;
+      }
     }
-
-    .numbers p {
-      color: #01C9EB;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .numbers h2 {
-      font-weight: 700;
-      margin: 0;
-      font-size: 60px;
-
-    }
-
+  }
+}
     /* --------------------FOOTER-------------------------*/
 
-    footer {
-      background: #313332;
-      color: #fff;
-    }
+footer {
+  background: #313332;
+  color: #fff;
+}
 
     /* footer social buttons*/
 
-    .fa {
-      border: none;
-      min-height: auto;
-      text-align: center;
-      padding: 2%;
-      min-width: 60px;
-      margin: 1%;
-      cursor: pointer;
-      background: transparent;
-      transition: background .5s, transform .5s;
-    }
+.fa {
+  border: none;
+  min-height: auto;
+  text-align: center;
+  padding: 2%;
+  min-width: 60px;
+  margin: 1%;
+  cursor: pointer;
+  background: transparent;
+  transition: background .5s, transform .5s;
 
-    .fa:hover {
+    &:hover {
       transform: scale(1.1);
     }
+}
 
-    .fa-facebook {
-      color: #3B5998;
-    }
+.fa-facebook {
+  color: $color-facebook;
 
-    .fa-facebook:hover {
+    &:hover {
       color: #ffffff;
-      background: #3B5998;
+      background: $color-facebook;
     }
+}
 
-    .fa-twitter {
-      color: #4099FF;
-    }
 
-    .fa-twitter:hover {
+.fa-twitter {
+  color: $color-twitter;
+
+    &:hover {
       color: #ffffff;
-      background: #4099FF;
-    }
+      background: $color-twitter;
+  }
+}
 
-    .fa-google-plus {
-      color: #DB5A3C;
-    }
+.fa-google-plus {
+  color: $color-googleplus;
 
-    .fa-google-plus:hover {
+    &:hover{
       color: #ffffff;
-      background: #DB5A3C;
+      background: $color-googleplus;
     }
+}
 
-    .fa-instagram {
-      color: #5C3D2E;
-    }
 
-    .fa-instagram:hover {
+.fa-instagram {
+  color: $color-instagram;
+
+    &:hover {
       color: #ffffff;
-      background: #5C3D2E;
+      background: $color-instagram;
     }
+}
 
-    .fa-github {
-      color: #4183C4;
-    }
+.fa-github {
+  color: $color-github;
 
-    .fa-github:hover {
+    &:hover {
       color: #ffffff;
-      background: #4183C4;
-    }
-
+      background: $color-github;
+  }
+}
     /* -------------------------Other footer -------------------------*/
 
-    footer h2 {
+footer {
+
+  h2 {
+    float: left;
+  }
+
+  hr {
+    min-width: 30%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 12%;
+    margin-left: 5%;
+  }
+
+  .container {
+    p {
       float: left;
     }
+  }
 
-    footer hr {
-      min-width: 30%;
-      display: inline-block;
-      text-align: center;
-      margin-top: 12%;
-      margin-left: 5%;
-    }
+   .col-m-4 {
+     .row {
+       .bold-class {
+         font-weight: 700;
+         padding-left: 0;
+       }
+     }
+  }
 
-    footer .container p {
-      float: left;
-    }
+  .copyright {
+    background: #000000;
+    text-align: center;
+  }
+}
+  /* -------------------------GRID -------------------------*/
+  /* -------------------------columns-------------------------*/
+  .col-1 {
+    width: $width;
+  }
 
-    footer .col-m-4 .row .bold-class {
-      font-weight: 700;
-      padding-left: 0;
-    }
+  .col-2 {
+    width: $width*2;
+  }
 
-    footer .copyright {
-      background: #000000;
-      text-align: center;
-    }
-    /* -------------------------GRID -------------------------*/
-    /* -------------------------columns-------------------------*/
-    .col-1 {
+  .col-3 {
+    width: $width*3;
+  }
+
+  .col-4 {
+    width: $width*4;
+  }
+
+  .col-5 {
+    width: $width*5;
+  }
+
+  .col-6 {
+    width: $width*6;
+  }
+
+  .col-7 {
+    width: $width*7;
+  }
+
+  .col-8 {
+    width: $width*8;
+  }
+
+  .col-9 {
+    width: $width*9;
+  }
+
+  .col-10 {
+    width: $width*10;
+  }
+
+  .col-11 {
+    width: $width*11;
+  }
+
+  .col-12 {
+    width: $width*12;
+  }
+
+  /* --------------------offsets-------------------------*/
+
+  .col-offset-1 {
+    margin-left: 8.33%;
+  }
+
+  .col-offset-2 {
+    margin-left: 16.66%;
+  }
+
+  .col-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-offset-4 {
+    margin-left: 33.33%;
+  }
+
+  .col-offset-5 {
+    margin-left: 41.66%;
+  }
+
+  .col-offset-6 {
+    margin-left: 50%;
+  }
+
+  .col-offset-7 {
+    margin-left: 58.33%;
+  }
+
+  .col-offset-8 {
+    margin-left: 66.66%;
+  }
+
+  .col-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-offset-10 {
+    margin-left: 83.33%;
+  }
+
+  .col-offset-11 {
+    margin-left: 91.66%;
+  }
+
+  .col-offset-12 {
+    margin-left: 100%;
+  }
+
+  /* --------------------RWD grid-------------------------*/
+
+  @media (max-width: 767px) {
+    /* For tablets: */
+    .col-s-1 {
       width: 8.33%;
     }
-
-    .col-2 {
+    .col-s-2 {
       width: 16.66%;
     }
-
-    .col-3 {
+    .col-s-3 {
       width: 25%;
     }
-
-    .col-4 {
+    .col-s-4 {
       width: 33.33%;
     }
-
-    .col-5 {
+    .col-s-5 {
       width: 41.66%;
     }
-
-    .col-6 {
+    .col-s-6 {
       width: 50%;
     }
-
-    .col-7 {
+    .col-s-7 {
       width: 58.33%;
     }
-
-    .col-8 {
+    .col-s-8 {
       width: 66.66%;
     }
-
-    .col-9 {
+    .col-s-9 {
       width: 75%;
     }
-
-    .col-10 {
+    .col-s-10 {
       width: 83.33%;
     }
-
-    .col-11 {
+    .col-s-11 {
       width: 91.66%;
     }
+    .col-s-12 {
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    /* For desktop: */
+    .col-m-1 {
+      width: 8.33%;
+    }
+    .col-m-2 {
+      width: 16.66%;
+    }
+    .col-m-3 {
+      width: 25%;
+    }
+    .col-m-4 {
+      width: 33.33%;
+    }
+    .col-m-5 {
+      width: 41.66%;
+    }
+    .col-m-6 {
+      width: 50%;
+    }
+    .col-m-7 {
+      width: 58.33%;
+    }
+    .col-m-8 {
+      width: 66.66%;
+    }
+    .col-m-9 {
+      width: 75%;
+    }
+    .col-m-10 {
+      width: 83.33%;
+    }
+    .col-m-11 {
+      width: 91.66%;
+    }
+    .col-m-12 {
+      width: 100%;
+    }
+  }
 
-    .col-12 {
+  /* --------------------RWD ------------------------*/
+
+  @media (max-width: 767px) {
+
+    nav {
+      height: auto;
+    }
+
+    nav li, nav ul {
+      float: left;
+      text-align: center;
       width: 100%;
     }
 
-    /* --------------------offsets-------------------------*/
-
-    .col-offset-1 {
-      margin-left: 8.33%;
+    nav img {
+      display: none;
     }
 
-    .col-offset-2 {
-      margin-left: 16.66%;
+    .slogan {
+      float: right;
+      min-width: 100px;
+      padding: 2% 10%;
+      margin-top: 40vh;
+      font-size: small;
     }
 
-    .col-offset-3 {
-      margin-left: 25%;
+    .hero {
+      background-size: cover;
+      background-position: right; /* w ramach praktyki tak sobie */
+      height: 50vh;
+      min-height: 450px;
     }
 
-    .col-offset-4 {
-      margin-left: 33.33%;
+    .benefits p {
+      color: grey;
+      max-height: 1000px;
+      overflow: -moz-scrollbars-none; /*nie umiem tego uciąć do np 4 wierszy max*/
     }
 
-    .col-offset-5 {
-      margin-left: 41.66%;
+    .team .row {
+      flex-direction: column;
+      align-items: center;
     }
 
-    .col-offset-6 {
-      margin-left: 50%;
+    .team img {
+      border-radius: 0;
     }
 
-    .col-offset-7 {
-      margin-left: 58.33%;
+    .team > .container > .row .col-m-3:hover img {
+      opacity: 1;
     }
 
-    .col-offset-8 {
-      margin-left: 66.66%;
+    .team > .container > .row .col-m-3:hover p {
+      transform: none;
+      text-transform: none;
+      font-weight: normal;
     }
 
-    .col-offset-9 {
-      margin-left: 75%;
+    [class*="position-overlay-"] {
+      display: none;
     }
 
-    .col-offset-10 {
-      margin-left: 83.33%;
+    .promo {
+      max-height: 1000px;
+      overflow: no-display;
     }
 
-    .col-offset-11 {
-      margin-left: 91.66%;
+    .side-image {
+      display: block;
+      max-height: 300px;
+      padding: 0;
+      overflow: hidden;
     }
 
-    .col-offset-12 {
-      margin-left: 100%;
+    .side-image img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
     }
 
-    /* --------------------RWD grid-------------------------*/
-
-    @media (max-width: 767px) {
-      /* For tablets: */
-      .col-s-1 {
-        width: 8.33%;
-      }
-      .col-s-2 {
-        width: 16.66%;
-      }
-      .col-s-3 {
-        width: 25%;
-      }
-      .col-s-4 {
-        width: 33.33%;
-      }
-      .col-s-5 {
-        width: 41.66%;
-      }
-      .col-s-6 {
-        width: 50%;
-      }
-      .col-s-7 {
-        width: 58.33%;
-      }
-      .col-s-8 {
-        width: 66.66%;
-      }
-      .col-s-9 {
-        width: 75%;
-      }
-      .col-s-10 {
-        width: 83.33%;
-      }
-      .col-s-11 {
-        width: 91.66%;
-      }
-      .col-s-12 {
-        width: 100%;
-      }
-    }
-    @media (min-width: 768px) {
-      /* For desktop: */
-      .col-m-1 {
-        width: 8.33%;
-      }
-      .col-m-2 {
-        width: 16.66%;
-      }
-      .col-m-3 {
-        width: 25%;
-      }
-      .col-m-4 {
-        width: 33.33%;
-      }
-      .col-m-5 {
-        width: 41.66%;
-      }
-      .col-m-6 {
-        width: 50%;
-      }
-      .col-m-7 {
-        width: 58.33%;
-      }
-      .col-m-8 {
-        width: 66.66%;
-      }
-      .col-m-9 {
-        width: 75%;
-      }
-      .col-m-10 {
-        width: 83.33%;
-      }
-      .col-m-11 {
-        width: 91.66%;
-      }
-      .col-m-12 {
-        width: 100%;
-      }
+    .promo-text {
+      float: none;
+      text-align: center;
     }
 
-    /* --------------------RWD ------------------------*/
+    footer hr {
+      display: none;
+    }
 
-    @media (max-width: 767px) {
+    footer .fa {
+      padding: 3%;
+      min-width: 50px;
+      margin: 1%;
+      cursor: pointer;
+      background: transparent;
+      transition: none;
+      border: 1px solid #ffffff;
+    }
 
-      nav {
-        height: auto;
-      }
-
-      nav li, nav ul {
-        float: left;
-        text-align: center;
-        width: 100%;
-      }
-
-      nav img {
-        display: none;
-      }
-
-      .slogan {
-        float: right;
-        min-width: 100px;
-        padding: 2% 10%;
-        margin-top: 40vh;
-        font-size: small;
-      }
-
-      .hero {
-        background-size: cover;
-        background-position: right; /* w ramach praktyki tak sobie */
-        height: 50vh;
-        min-height: 450px;
-      }
-
-      .benefits p {
-        color: grey;
-        max-height: 1000px;
-        overflow: -moz-scrollbars-none; /*nie umiem tego uciąć do np 4 wierszy max*/
-      }
-
-      .team .row {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .team img {
-        border-radius: 0; /* nie umiem zrobić tego border 50%, bo obrazki robia się jajowate*/
-      }
-
-      .team > .container > .row .col-m-3:hover img {
-        opacity: 1;
-      }
-
-      .team > .container > .row .col-m-3:hover p {
-        transform: none;
-        text-transform: none;
-        font-weight: normal;
-      }
-
-      [class*="position-overlay-"] {
-        display: none;
-      }
-
-      .promo {
-        max-height: 1000px;
-        overflow: no-display;
-      }
-
-      .side-image {
-        display: block;
-        max-height: 300px;
-        padding: 0;
-        overflow: hidden;
-      }
-
-      .side-image img {
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-      }
-
-      .promo-text {
-        float: none;
-        text-align: center;
-      }
-
-      footer hr {
-        display: none;
-      }
-
-      footer .fa {
-        padding: 3%;
-        min-width: 50px;
-        margin: 1%;
-        cursor: pointer;
-        background: transparent;
-        transition: none;
-        border: 1px solid white;
-      }
-
-      .fa:hover {
-        transform: none;
-      }
+    .fa:hover {
+      transform: none;
+    }
   }
 
 

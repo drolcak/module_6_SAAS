@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*nie wpad┼éem na nic m─ůdrzejszego, zeby sobie operatory po─çwiczy─ç:D*/
 * {
   box-sizing: border-box; }
 
@@ -225,20 +226,19 @@ nav {
       font-style: italic; }
 
 /* -------------------------NUMBERS -------------------------*/
-.numbers .container .row .col-m-3, .numbers .container .row .col-s-12 {
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10% 0; }
-
 .numbers p {
   color: #01C9EB;
   font-weight: 700;
   margin: 0; }
-
 .numbers h2 {
   font-weight: 700;
   margin: 0;
   font-size: 60px; }
+.numbers .container .row .col-m-3,
+.numbers .container .row .col-s-12 {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10% 0; }
 
 /* --------------------FOOTER-------------------------*/
 footer {
@@ -256,63 +256,53 @@ footer {
   cursor: pointer;
   background: transparent;
   transition: background .5s, transform .5s; }
-
-.fa:hover {
-  transform: scale(1.1); }
+  .fa:hover {
+    transform: scale(1.1); }
 
 .fa-facebook {
   color: #3B5998; }
-
-.fa-facebook:hover {
-  color: #ffffff;
-  background: #3B5998; }
+  .fa-facebook:hover {
+    color: #ffffff;
+    background: #3B5998; }
 
 .fa-twitter {
   color: #4099FF; }
-
-.fa-twitter:hover {
-  color: #ffffff;
-  background: #4099FF; }
+  .fa-twitter:hover {
+    color: #ffffff;
+    background: #4099FF; }
 
 .fa-google-plus {
   color: #DB5A3C; }
-
-.fa-google-plus:hover {
-  color: #ffffff;
-  background: #DB5A3C; }
+  .fa-google-plus:hover {
+    color: #ffffff;
+    background: #DB5A3C; }
 
 .fa-instagram {
   color: #5C3D2E; }
-
-.fa-instagram:hover {
-  color: #ffffff;
-  background: #5C3D2E; }
+  .fa-instagram:hover {
+    color: #ffffff;
+    background: #5C3D2E; }
 
 .fa-github {
   color: #4183C4; }
-
-.fa-github:hover {
-  color: #ffffff;
-  background: #4183C4; }
+  .fa-github:hover {
+    color: #ffffff;
+    background: #4183C4; }
 
 /* -------------------------Other footer -------------------------*/
 footer h2 {
   float: left; }
-
 footer hr {
   min-width: 30%;
   display: inline-block;
   text-align: center;
   margin-top: 12%;
   margin-left: 5%; }
-
 footer .container p {
   float: left; }
-
 footer .col-m-4 .row .bold-class {
   font-weight: 700;
   padding-left: 0; }
-
 footer .copyright {
   background: #000000;
   text-align: center; }
@@ -326,34 +316,34 @@ footer .copyright {
   width: 16.66%; }
 
 .col-3 {
-  width: 25%; }
+  width: 24.99%; }
 
 .col-4 {
-  width: 33.33%; }
+  width: 33.32%; }
 
 .col-5 {
-  width: 41.66%; }
+  width: 41.65%; }
 
 .col-6 {
-  width: 50%; }
+  width: 49.98%; }
 
 .col-7 {
-  width: 58.33%; }
+  width: 58.31%; }
 
 .col-8 {
-  width: 66.66%; }
+  width: 66.64%; }
 
 .col-9 {
-  width: 75%; }
+  width: 74.97%; }
 
 .col-10 {
-  width: 83.33%; }
+  width: 83.3%; }
 
 .col-11 {
-  width: 91.66%; }
+  width: 91.63%; }
 
 .col-12 {
-  width: 100%; }
+  width: 99.96%; }
 
 /* --------------------offsets-------------------------*/
 .col-offset-1 {
@@ -505,8 +495,7 @@ footer .copyright {
     align-items: center; }
 
   .team img {
-    border-radius: 0;
-    /* nie umiem zrobi─ç tego border 50%, bo obrazki robia si─Ö jajowate*/ }
+    border-radius: 0; }
 
   .team > .container > .row .col-m-3:hover img {
     opacity: 1; }
@@ -548,7 +537,7 @@ footer .copyright {
     cursor: pointer;
     background: transparent;
     transition: none;
-    border: 1px solid white; }
+    border: 1px solid #ffffff; }
 
   .fa:hover {
     transform: none; } }
