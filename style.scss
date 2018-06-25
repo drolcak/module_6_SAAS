@@ -1,5 +1,10 @@
-$color-black: #000;
-$color-white: #fff;
+@mixin container ($max-width){ /*w ramach praktyki zrobione*/
+  width: 100%;
+  max-width:$max-width;
+  margin: 0 auto;
+}
+
+$background-transparency: rgba(0, 0, 0, .5);
 
 * {
   box-sizing: border-box;
@@ -20,10 +25,8 @@ h3 {font-size: 26px;}
 
 p {font-size: 18px;}
 
-.container { /*dać to w mix w ramach ćwiczenia*/
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.container {
+  @include container(1200px)
 }
 
 .row::before, .row::after {
@@ -51,13 +54,14 @@ p {font-size: 18px;}
       float: right;
 
       li {
+
         list-style: none;
         float: right;
 
         a {
           padding: 0 20px;
           text-decoration: none;
-          color: $color-white;
+          color: #ffffff;
           display: block;
           text-transform: uppercase;
           line-height: 50px;
@@ -86,11 +90,11 @@ p {font-size: 18px;}
   }
 
   .slogan {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: $background-transparency;
     float: right;
     min-width: 500px;
     padding: 2% 10%;
-    color: white;
+    color: #ffffff;
     margin-top: 40vh;
     font-size: x-large;
   }
@@ -136,38 +140,48 @@ p {font-size: 18px;}
   }
     /* -------------------------GALLERY -------------------------*/
 
-    .gallery img {
-      object-fit: cover;
-      padding: 0;
-      width: 100%;
-      height: 200px;
-      max-height: 220px;
-      margin: 0;
-    }
+.gallery {
+  img {
+    object-fit: cover;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    max-height: 220px;
+    margin: 0;
+  }
 
-    .gallery [class*="col-"] {
-      padding: 0 1px;
-    }
+  [class*="col-"] {
+    padding: 0 1px;
+  }
+}
 
-    .image {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
+.image {
+  width: 100%;
+  height: 100%;
+  position: relative;
 
-    .layer {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      color: #ffffff;
-      text-shadow: 1px 1px #000000;
-      left: 0;
-      padding: 0;
-      margin: 0;
-    }
+  &:hover .layer {
+    background: $background-transparency;
+    cursor: pointer;
+  }
 
-    .layer .fa {
+  &:hover .fa {
+    opacity: 1;
+  }
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px #000000;
+  left: 0;
+  padding: 0;
+  margin: 0;
+
+    .fa {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
@@ -175,29 +189,15 @@ p {font-size: 18px;}
       opacity: 0;
       transition: .8s;
     }
+}
 
-    .image:hover .layer {
-      background: rgba(0, 0, 0, .5);
-      cursor: pointer;
-    }
-
-    .image:hover .fa {
-      opacity: 1;
-    }
 
     /* -------------------------TEAM -------------------------*/
 
-    .team > .container > .row {
-      margin: 50px auto;
-      display: flex;
-      justify-content: center;
-    }
+.team {
+  padding: 5%;
 
-    .team {
-      padding: 5%;
-    }
-
-    .team img {
+    img {
       border-radius: 50%;
       width: 100%;
       height: 100%;
@@ -205,99 +205,109 @@ p {font-size: 18px;}
       display: flex;
     }
 
-    .team p {
+    p {
       text-align: center;
       color: grey;
     }
 
-    .team > .container > .row .col-m-3 {
-      position: relative;
-      padding: 0;
-      margin-right: 2%;
-    }
+    > .container {
+      > .row {
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
 
-    [class*="position-overlay-"] {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: 1s ease;
-      border-radius: 50%;
-      text-transform: uppercase;
-    }
+        .col-m-3 {
+          position: relative;
+          padding: 0;
+          margin-right: 2%;
 
-    .container > .row > .col-m-3:hover [class*="position-overlay-"] {
-      opacity: 1;
-      transition: .3s ease-in-out;
-    }
+          &:hover p {
+            transform: scale(1.2);
+            text-transform: uppercase;
+            font-weight: 700;
+          }
 
-    .team > .container > .row .col-m-3:hover p {
-      transform: scale(1.2);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+          &:hover img {
+            opacity: 0.3;
+            cursor: pointer;
+          }
 
-    .team > .container > .row .col-m-3:hover img {
-      opacity: 0.3;
+          &:hover [class*="position-overlay-"] {
+            opacity: 1;
+            transition: .3s ease-in-out;
+          }
+        }
+      }
     }
+}
 
-    [class*="text-position"] {
-      color: #000;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      text-align: center;
-    }
+[class*="position-overlay-"] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s ease;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
+[class*="text-position"] {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 
     /* -------------------------PROMO -------------------------*/
 
-    .promo {
-      background-color: #F5F5F5;
-      padding: 10px 0;
-      max-height: 300px;
-      overflow: hidden;
-    }
+.promo {
+  background-color: #F5F5F5;
+  padding: 10px 0;
+  max-height: 300px;
+  overflow: hidden;
 
     .side-image {
       display: block;
       max-height: 400px;
       padding: 0;
-    }
 
-    .side-image img {
-      max-width: 120%;
-      height: auto;
-      margin-left: -30%;
+      img {
+        max-width: 120%;
+        height: auto;
+        margin-left: -30%;
+      }
     }
 
     .promo-text {
       float: left;
       width: 100%;
       padding: 0 10px;
-    }
 
-    .promo-text h1 {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
+      > h1 + p {
+        padding-left: 0;
+        text-align: left;
+      }
 
-    .promo-text > h1 + p {
-      padding-left: 0;
-      text-align: left;
-    }
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
 
-    .promo-text > p:last-of-type {
-      text-align: center;
-      font-style: italic;
+      > p:last-of-type {
+        text-align: center;
+        font-style: italic;
+      }
     }
+}
 
-    /* -------------------------NUMBERS -------------------------*/
+      /* -------------------------NUMBERS -------------------------*/
 
     .numbers .container .row .col-m-3, .numbers .container .row .col-s-12 {
       text-transform: uppercase;
